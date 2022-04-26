@@ -13,7 +13,9 @@ function gameTime() {
 	}
 
 	console.log("Welcome to game-world!");
+
 	//randomizeBoss();
+
 	getName();
 	chooseRoom(bossRoom);
 }
