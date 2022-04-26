@@ -111,7 +111,15 @@ function fightBoss(player1) {
 	).toUpperCase();
 
 	if (endGame == "YES") {
-		gameTime();
+		delete player1;
+		let bossRoom = Math.floor(Math.random() * 100);
+		if (bossRoom >= 50) {
+			bossRoom = "B";
+		} else {
+			bossRoom = "A";
+		}
+
+		getName();
 	}
 }
 
