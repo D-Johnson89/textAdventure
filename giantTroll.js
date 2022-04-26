@@ -15,7 +15,7 @@ function gameTime() {
 	console.log("Welcome to game-world!");
 	//randomizeBoss();
 	getName();
-	chooseRoom();
+	chooseRoom(bossRoom);
 }
 
 //   Enter Name
@@ -39,7 +39,7 @@ function chooseRoom(bossRoom) {
 				if (choice == "FIGHT") {
 					fightBoss();
 				} else {
-					chooseRoom();
+					chooseRoom(bossRoom);
 				}
 			} else {
 				choice = prompt(
@@ -49,7 +49,7 @@ function chooseRoom(bossRoom) {
 				if (choice == "SEARCH") {
 					searchRoom();
 				} else {
-					chooseRoom();
+					chooseRoom(bossRoom);
 				}
 			}
 			break;
@@ -62,7 +62,7 @@ function chooseRoom(bossRoom) {
 				if (choice == "FIGHT") {
 					fightBoss();
 				} else {
-					chooseRoom();
+					chooseRoom(bossRoom);
 				}
 			} else {
 				choice = prompt(
@@ -72,23 +72,23 @@ function chooseRoom(bossRoom) {
 				if (choice == "SEARCH") {
 					searchRoom();
 				} else {
-					chooseRoom();
+					chooseRoom(bossRoom);
 				}
 			}
 			break;
 	}
 }
 
-function searchRoom() {
+function searchRoom(bossRoom) {
 	let pickUp = prompt(
 		"You Found a Sword! Take Sword? (Yes or No): "
 	).toUpperCase();
 
 	if (pickUp == "YES") {
 		inventory.push("Sword");
-		chooseRoom();
+		chooseRoom(bossRoom);
 	} else {
-		chooseRoom();
+		chooseRoom(bossRoom);
 	}
 }
 
