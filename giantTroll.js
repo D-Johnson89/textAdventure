@@ -12,26 +12,23 @@ if (bossRoom >= 50) {
 class Player {
 	constructor(name) {
 		this.name = name;
-		this.inventory = [];
 	}
-}
-
-function gameTime() {
-	console.log("Welcome to game-world!");
-
-	//randomizeBoss();
-
-	getName();
-	chooseRoom(bossRoom);
 }
 
 //   Enter Name
 function getName() {
+	console.log("Welcome to game-world!");
 	let name = prompt("Enter your name: ");
 
-	let player1 = new Player(name);
-	console.log(`Safe Journies ${name}`);
-	return player1;
+	var player1 = new Player(name);
+
+	gameTime(player1);
+}
+
+function gameTime(player1) {
+	console.log(`Safe Journies ${player1.name}`);
+
+	chooseRoom(bossRoom, player1);
 }
 
 //   Room Choice
@@ -56,7 +53,7 @@ function chooseRoom(bossRoom, player1) {
 				).toUpperCase();
 
 				if (choice == "SEARCH") {
-					searchRoom(bossRoom, player1);
+					searchRoom(player1);
 				} else {
 					chooseRoom(bossRoom, player1);
 				}
@@ -79,25 +76,26 @@ function chooseRoom(bossRoom, player1) {
 				).toUpperCase();
 
 				if (choice == "SEARCH") {
-					searchRoom(bossRoom, player1);
+					searchRoom(player1);
 				} else {
 					chooseRoom(bossRoom, player1);
 				}
 			}
 			break;
 	}
+	//return player1;
 }
 
-function searchRoom(bossRoom, player1) {
+function searchRoom(player1) {
 	let pickUp = prompt(
 		"You Found a Sword! Take Sword? (Yes or No): "
 	).toUpperCase();
 
 	if (pickUp == "YES") {
-		player1.inventory.push("Sword");
-		chooseRoom(bossRoom);
+		player1.inventory = ["Sword"];
+		chooseRoom(bossRoom, player1);
 	} else {
-		chooseRoom(bossRoom);
+		chooseRoom(bossRoom, player1);
 	}
 }
 
@@ -117,4 +115,4 @@ function fightBoss(player1) {
 	}
 }
 
-gameTime();
+getName();

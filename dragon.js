@@ -19,7 +19,6 @@ class Player {
 function gameTime() {
 	console.log("Welcome to Game-World!");
 
-	//randomizeBoss();
 	getPlayers();
 	//chooseRoom(bossRoom);
 }
