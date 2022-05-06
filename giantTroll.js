@@ -12,6 +12,7 @@ if (bossRoom >= 50) {
 class Player {
 	constructor(name) {
 		this.name = name;
+		this.inventory = [];
 	}
 }
 
@@ -92,7 +93,7 @@ function searchRoom(player1) {
 	).toUpperCase();
 
 	if (pickUp == "YES") {
-		player1.inventory = ["Sword"];
+		player1.inventory.push("Sword");
 		chooseRoom(bossRoom, player1);
 	} else {
 		chooseRoom(bossRoom, player1);
