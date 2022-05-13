@@ -54,7 +54,12 @@ function chooseRoom(bossRoom, player1) {
 				).toUpperCase();
 
 				if (choice == "SEARCH") {
-					searchRoom(player1);
+					if (player1.inventory.includes("Sword")) {
+						console.log("The Room is Empty!");
+						chooseRoom(bossRoom, player1);
+					} else {
+						searchRoom(player1);
+					}
 				} else {
 					chooseRoom(bossRoom, player1);
 				}
@@ -77,7 +82,12 @@ function chooseRoom(bossRoom, player1) {
 				).toUpperCase();
 
 				if (choice == "SEARCH") {
-					searchRoom(player1);
+					if (player1.inventory.includes("Sword")) {
+						console.log("The Room is Empty!");
+						chooseRoom(bossRoom, player1);
+					} else {
+						searchRoom(player1);
+					}
 				} else {
 					chooseRoom(bossRoom, player1);
 				}

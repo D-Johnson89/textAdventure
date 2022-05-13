@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 
 const prompt = require("prompt-sync")({ sigint: true });
 
@@ -16,20 +16,19 @@ class Player {
 	}
 }
 
-function gameTime() {
-	console.log("Welcome to Game-World!");
-
-	getPlayers();
-	//chooseRoom(bossRoom);
-}
-
 //   Get Player Name
 function getPlayers() {
+	console.log("Welcome to Game-World!");
 	let name = prompt("Enter your name: ");
 
-	let player1 = new Player(name);
-	console.log(`Safe Journies ${name}`);
-	console.log(player1);
+	var player = new Player(name);
+
+	gameTime(player);
 }
 
-gameTime();
+function gameTime(player) {
+	console.log(`Safe Journies ${name}`);
+
+	chooseRoom(bossRoom, player);
+	//chooseRoom(bossRoom);
+}
